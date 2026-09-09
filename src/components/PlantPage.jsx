@@ -12,7 +12,7 @@ function PlantPage() {
       .then((response) => response.json())
       .then((data) => setPlants(data))
       .catch((error) => console.error("Failed to load plants:", error));
-  }) []);
+  }, []);
 
   function handleAddPlant(newPlant) {
     setPlants((currentPlants) => [...currentPlants, newPlant]);

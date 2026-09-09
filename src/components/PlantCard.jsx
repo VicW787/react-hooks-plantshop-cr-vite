@@ -1,6 +1,14 @@
 import React from "react";
 
-function PlantCard() {
+function PlantCard({ plant }) {
+
+  const [isInStock, setIsInStock] = useState(true);
+
+  function handleToggleStock() {
+    setIsInStock((currentStatus) => !currentStatus);
+  }
+
+  
   return (
     <li className="card" data-testid="plant-item">
       <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
