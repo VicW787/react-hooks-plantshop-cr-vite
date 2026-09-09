@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
@@ -19,7 +19,7 @@ function PlantPage() {
   }
 
   const displayedPlants = plants.filter((plant) =>
-    plant.name.toLowerCase().includes(searchQuery.toLowerCase())
+    (plant.name || "").toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
